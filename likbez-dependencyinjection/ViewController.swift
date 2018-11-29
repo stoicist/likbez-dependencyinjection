@@ -1,25 +1,29 @@
-//
-//  ViewController.swift
-//  likbez-dependencyinjection
-//
-//  Created by Arthur on 29/11/2018.
-//  Copyright © 2018 Arthur Ber. All rights reserved.
-//
-
 import UIKit
+
+func test(topic: String, action: ()->()) {
+    print("\n---------- \(topic) ----------")
+    action()
+}
 
 class ViewController: UIViewController {
 
+    /*
+        Контейнер зависимостей - фреймворки которые помогают управлять зависимостями
+    */
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        propertyInjection()
+        
+        initializerInjection() //with Dependency Injection
+        
+        methodInjection()
+        
+        containerInjection()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
+//TODO: - Реализовать контейнер зависимостей
+func containerInjection() { }
